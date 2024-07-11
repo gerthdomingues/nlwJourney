@@ -1,3 +1,5 @@
+Conteúdos aprendidos nesta jornada!
+
 HTML
 
 - Hypertext
