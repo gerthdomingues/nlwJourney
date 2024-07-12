@@ -112,6 +112,10 @@ section input {
 section .card-bg {
   position: relative;
   padding: 10px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 section .card-bg:has(:checked) .active,
@@ -124,11 +128,54 @@ section .card-bg .active {
   display: none;
 }
 
+section .card-bg > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 time {
   font-size: 14px;
   color: #a1a1ab;
+  text-align: right;
 }
 
 time.full {
   display: none;
+}
+
+@media (width > 1024px) {
+  #app {
+    display: flex;
+    max-width: 960px;
+    gap: 32px;
+  }
+
+  main {
+    margin-top: 0;
+    /* cresce o que poder para preencher a caixa, tem q ter o display flex */
+    flex: 1;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  time.full {
+    display: block;
+  }
+
+  time.short {
+    display: none;
+  }
+}
+
+section .card-bg {
+  animation: appear 1.2s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
 }
